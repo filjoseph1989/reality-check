@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Reality Check - Next.js Project
+
+[![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black?logo=next.js)](https://nextjs.org)
+[![Deployed with Vercel](https://img.shields.io/badge/deployed%20with-vercel-000000.svg?logo=vercel)](https://vercel.com)
+
+A modern web application built with Next.js 14, optimized for performance and developer experience. This project leverages features like the App Router, Server Components, and the Geist font family.
+
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Environment Variables](#environment-variables)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+---
+
+## Prerequisites
+
+- Node.js 18.15+ (recommended LTS version)
+- npm / Yarn / pnpm / Bun
+- Git
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/filjoseph1989/reality-check.git
+   cd reality-check
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install  # or yarn | pnpm | bun install
+   ```
 
 ## Getting Started
 
-First, run the development server:
-
+Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser. The page will auto-reload on changes.
+
+## Available Scripts
+
+- `npm run dev`: Start the development server
+- `npm run build`: Create a production build
+- `npm run start`: Start the production server (after building)
+- `npm run lint`: Run ESLint for code quality checks
+- `npm run test`: Run Jest tests (if configured)
+
+## Environment Variables
+
+Create a `.env.local` file to define environment variables:
+```env
+NEXT_PUBLIC_API_URL=https://api.example.com
+# Server-side variables (not exposed to client):
+DATABASE_URL=your_db_url
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Note:** Prefix client-side variables with `NEXT_PUBLIC_`. See [Next.js Environment Variables](https://nextjs.org/docs/app/building-your-application/configuring/environment-variables).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Vercel (Recommended)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/filjoseph1989/reality-check)
 
-## Learn More
+This project is optimized for Vercel. Follow these steps:
+1. Push changes to a Git repository
+2. Import the repository into Vercel
+3. Automatic deployments will trigger on `git push`
 
-To learn more about Next.js, take a look at the following resources:
+### Other Platforms
+For alternative hosting (Netlify, AWS, etc.), build the project first:
+```bash
+npm run build
+```
+Then deploy the contents of the `.next` folder.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions are welcome! Please follow these steps:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feat/your-feature`)
+3. Commit changes (`git commit -m 'Add feature'`)
+4. Push to the branch (`git push origin feat/your-feature`)
+5. Open a Pull Request
 
-## Deploy on Vercel
+Ensure all code passes linting and tests before submitting.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT License](LICENSE) (Replace with your project's actual license)
+
+## Acknowledgements
+
+- Built with [Next.js](https://nextjs.org)
+- Fonts powered by [Geist](https://vercel.com/font)
+- Deployment support by [Vercel](https://vercel.com)
