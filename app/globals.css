@@ -301,7 +301,8 @@ footer {
     color: black;
     background-color: #cdaaff;
     border: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-family: var(--font-bagos);
   }
 
   button.continue-final {
