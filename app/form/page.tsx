@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import FormAnimation from '../components/FormAnimation';
 import FormSlides from '../components/FormSlides';
-import FormFooter from '../components/FormFooter';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function FormPage() {
   const router = useRouter();
@@ -53,9 +53,11 @@ export default function FormPage() {
                 onStepChange={onStepChange} />
             </section>
           </main>
-          <FormFooter
+          <Footer
             isVisible={currentStep === 2}
-            onContinue={handleContinue} />
+            label="Continue"
+            onAction={handleContinue}
+            className="border border-white rounded-md w-full p-4 continue continue-final cursor-pointer" />
         </div>
       </div>
     </div>

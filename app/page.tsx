@@ -13,7 +13,7 @@ export default function Home() {
     window.location.reload();
   }
 
-  const getStarted = () => {
+  const onGetStarted = () => {
     router.push('/tutorial');
   }
 
@@ -39,7 +39,12 @@ export default function Home() {
               </div>
             </section>
           </main>
-          <Footer onGetStarted={getStarted} />
+          {/* <Footer onGetStarted={getStarted} /> */}
+          <Footer
+            label="Get a reality check"
+            onAction={onGetStarted}
+            ariaLabel="Get a reality check"
+            className='border border-white rounded-md w-full p-4 continue cursor-pointer get-reality-check' />
         </div>
       </div>
     </div>
