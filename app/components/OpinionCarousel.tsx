@@ -37,7 +37,7 @@ const OpinionCarousel = () => {
         <div
           key={index}
           style={{ color: 'black', zIndex: 10 }}
-          ref={(el) => (opinionRefs.current[index] = el)}
+          ref={(el) => { opinionRefs.current[index] = el; }}
           className='opinion-item'>
           <p className="bagoss-text">{opinion}</p>
         </div>

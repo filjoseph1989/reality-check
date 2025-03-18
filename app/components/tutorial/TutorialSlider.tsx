@@ -69,7 +69,7 @@ const TutorialSlider = ({ slides, currentSlide, onSlideChange }: TutorialSliderP
             key={index}
             id={slide.id}
             className="slide text-container"
-            ref={(el) => (slideRefs.current[index] = el)}>
+            ref={(el) => { slideRefs.current[index] = el; }}>
             <p className="bagoss-text" dangerouslySetInnerHTML={{ __html: slide.text }}></p>
           </div>
         ))}
