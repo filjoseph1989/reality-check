@@ -101,11 +101,18 @@ body {
 nav {
   overflow: hidden;
 
+
   .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2px;
+
+    div.nav-item.nav-item-1 {
+      background-color: #0c0d10;
+      width: 35px;
+      height: 12px;
+    }
 
     &>div:nth-child(1),
     &>div:nth-child(3) {
@@ -180,7 +187,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 30px 0px;
+    margin: 50px 0px;
 
     img {
       margin: 0;
@@ -291,8 +298,10 @@ footer {
   }
 
   button.get-reality-check {
+    color: black;
     background-color: #cdaaff;
     border: none;
+    font-size: 0.8rem;
   }
 
   button.continue-final {
