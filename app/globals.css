@@ -132,6 +132,24 @@ nav {
   }
 }
 
+main>section.slider-container>div.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-direction: row;
+  div.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #aaa;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  div.dot.active {
+    position: relative;
+  }
+}
+
 main {
   section {
     div.text-container {
@@ -231,26 +249,6 @@ main {
 
     .slider-container {
       overflow: hidden;
-    }
-
-    .pagination {
-      display: flex;
-      justify-content: center;
-      margin-top: 1rem;
-      flex-direction: row;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #aaa;
-      margin: 0 5px;
-      cursor: pointer;
-    }
-
-    .dot.active {
-      background-color: white;
     }
 
     .text-container {
