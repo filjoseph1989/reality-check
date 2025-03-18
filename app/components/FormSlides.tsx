@@ -39,6 +39,7 @@ export default function FormSlides({ currentStep, formData, onFormDataChange, on
         if (formSectionRef.current) {
           gsap.to(formSectionRef.current, { opacity: 1, duration: 0.5 });
         }
+        firstNameInputRef.current?.focus();
       } else if (currentStep === 1) {
         gsap.to(slideRefs.current[0], { x: '-100%', opacity: 0, duration: 0.5, ease: 'power2.out' });
         gsap.to(slideRefs.current[1], { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' });
@@ -46,6 +47,7 @@ export default function FormSlides({ currentStep, formData, onFormDataChange, on
         if (formSectionRef.current) {
           gsap.to(formSectionRef.current, { opacity: 1, duration: 0.5 });
         }
+        setTimeout(() => emailInputRef.current?.focus(), 500);
       } else if (currentStep === 2) {
         gsap.to([slideRefs.current[0], slideRefs.current[1]], { x: '-100%', opacity: 0, duration: 0.5, ease: 'power2.out' });
         gsap.to(slideRefs.current[2], { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' });
@@ -92,10 +94,10 @@ export default function FormSlides({ currentStep, formData, onFormDataChange, on
           className="slide"
           ref={(el) => (slideRefs.current[0] = el)} >
           <FormInput
-            onNext={handleNextFirstName}
             inputRef={firstNameInputRef}
             placeholder="First name"
             type="text"
+            onNext={handleNextFirstName}
             onKeyDown={handleKeyDownFirstName}
             labelText="Let's start with the basics. Type in your first name." />
         </div>
@@ -104,10 +106,10 @@ export default function FormSlides({ currentStep, formData, onFormDataChange, on
           className="slide"
           ref={(el) => (slideRefs.current[1] = el)} >
           <FormInput
-            onNext={handleNextEmail}
             inputRef={emailInputRef}
             placeholder="Email address"
             type="email"
+            onNext={handleNextEmail}
             onKeyDown={handleKeyDownEmail}
             labelText="How should we contact you? Type in your email address." />
         </div>
