@@ -92,7 +92,7 @@ export default function FormSlides({ currentStep, formData, onFormDataChange, on
         <div
           id="slide-1"
           className="slide"
-          ref={(el: HTMLDivElement|null) => (slideRefs.current[0] = el)} >
+          ref={(el: HTMLDivElement | null) => { slideRefs.current[0] = el; }} >
           <FormInput
             inputRef={firstNameInputRef}
             placeholder="First name"
@@ -104,7 +104,7 @@ export default function FormSlides({ currentStep, formData, onFormDataChange, on
         <div
           id="slide-2"
           className="slide"
-          ref={(el: HTMLDivElement|null) => (slideRefs.current[1] = el)} >
+          ref={(el: HTMLDivElement | null) => { slideRefs.current[1] = el; }} >
           <FormInput
             inputRef={emailInputRef}
             placeholder="Email address"
@@ -117,7 +117,7 @@ export default function FormSlides({ currentStep, formData, onFormDataChange, on
       <div
         id="slide-3"
         className="slide"
-        ref={(el: HTMLDivElement|null) => (slideRefs.current[2] = el)} >
+        ref={(el: HTMLDivElement | null) => { slideRefs.current[2] = el; }} >
         <FinalSlide userName={formData.firstName} />
       </div>
     </>

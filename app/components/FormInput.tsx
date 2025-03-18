@@ -4,7 +4,7 @@ import React from 'react';
 
 interface FormInputProps {
   onNext: () => void;
-  inputRef: React.RefObject<HTMLInputElement>;
+  inputRef: React.RefObject<HTMLInputElement|null>;
   placeholder: string;
   type: string;
   onKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
