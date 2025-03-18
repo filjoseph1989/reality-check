@@ -217,13 +217,12 @@ main {
     }
     div.input-field-section {
       position: relative;
-
       input {
         position: relative;
         border-radius: 15px;
         margin-bottom: 20px;
+        font-family: var(--font-bagos);
       }
-
       button.button-next {
         position: absolute;
         top: 27px;
@@ -232,10 +231,6 @@ main {
         }
       }
     }
-  }
-
-  section#form-section {
-    height: 400px;
     form {
       position: relative;
       div {
@@ -250,6 +245,10 @@ main {
         margin-top: 330px;
       }
     }
+  }
+
+  section#form-section {
+    height: 400px;
   }
 
   section.slider-container>div.slides-wrapper {
