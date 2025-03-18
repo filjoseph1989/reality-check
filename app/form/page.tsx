@@ -7,6 +7,7 @@ import upArrow from '../../public/up-arrow.svg';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
 
@@ -23,6 +24,7 @@ export default function FormPage() {
   const emailInputRef = useRef<HTMLInputElement>(null);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const formSectionRef = useRef<HTMLElement>(null);
+  const router = useRouter();
 
   // Load Lottie animation
   useEffect(() => {
@@ -109,8 +111,24 @@ export default function FormPage() {
   };
 
   const backToTutorialPage = () => {
-    router.push('/');
+    router.push('/tutorial');
   };
+
+  const handleKeyDownFirstName = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleNextFirstName();
+    }
+  };
+
+  const handleKeyDownEmail = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleNextEmail();
+    }
+  };
+
+  const handleContinue = () => {
+    //TODO: go to the next page
+  }
 
   return (
     <div className="container">
@@ -162,7 +180,8 @@ export default function FormPage() {
                       type="text"
                       placeholder="First name"
                       className="border border-white rounded-md w-full p-4 pr-12"
-                      ref={firstNameInputRef} />
+                      ref={firstNameInputRef}
+                      onKeyDown={handleKeyDownFirstName} />
                     <button
                       type="button"
                       onClick={handleNextFirstName}
@@ -183,7 +202,8 @@ export default function FormPage() {
                       type="email"
                       placeholder="Email address"
                       className="border border-white rounded-md w-full p-4 pr-12"
-                      ref={emailInputRef} />
+                      ref={emailInputRef}
+                      onKeyDown={handleKeyDownEmail} />
                     <button
                       type="button"
                       onClick={handleNextEmail}
@@ -208,7 +228,8 @@ export default function FormPage() {
             {currentStep === 2 && (
               <button
                 aria-label="Get a reality check"
-                className="border border-white rounded-md w-full p-4 continue continue-final cursor-pointer"> Continue
+                className="border border-white rounded-md w-full p-4 continue continue-final cursor-pointer"
+                onClick={handleContinue}> Continue
               </button>
             )}
           </footer>
