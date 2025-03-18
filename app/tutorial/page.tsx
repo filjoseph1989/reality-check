@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
-import TutorialHeader from '../components/tutorial/TutorialHeader';
 import TutorialLottie from '../components/tutorial/TutorialLottie';
 import TutorialSlider from '../components/tutorial/TutorialSlider';
 import TutorialFooter from '../components/tutorial/TutorialFooter';
 import TutorialMobileWrapper from "../components/tutorial/TutorialMobileWrapper";
+import Header from "../components/Header";
 
 export default function TutorialPage() {
   const router = useRouter();
@@ -41,7 +41,9 @@ export default function TutorialPage() {
   return (
     <div className="container">
       <TutorialMobileWrapper>
-        <TutorialHeader onRefresh={handleRefresh} onBack={backToHomePage} />
+        <Header
+          onRefresh={handleRefresh}
+          onBack={backToHomePage} />
         <main>
           <section>
             <TutorialLottie />
@@ -49,8 +51,7 @@ export default function TutorialPage() {
           <TutorialSlider
             slides={slides}
             currentSlide={currentSlide}
-            onSlideChange={goToSlide}
-          />
+            onSlideChange={goToSlide} />
         </main>
         <TutorialFooter isLastSlide={currentSlide === slides.length - 1} onContinue={nextSlide} />
       </TutorialMobileWrapper>

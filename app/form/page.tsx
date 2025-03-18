@@ -2,10 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import FormHeader from '../components/FormHeader';
 import FormAnimation from '../components/FormAnimation';
 import FormSlides from '../components/FormSlides';
 import FormFooter from '../components/FormFooter';
+import Header from '../components/Header';
 
 export default function FormPage() {
   const router = useRouter();
@@ -36,7 +36,9 @@ export default function FormPage() {
     <div className="container">
       <div className="mobile-wrap">
         <div className="mobile clearfix">
-          <FormHeader onBack={backToTutorialPage} onRefresh={handleRefresh} />
+          <Header
+            onBack={backToTutorialPage}
+            onRefresh={handleRefresh} />
           <main>
             <section>
               <div id="animation-container">

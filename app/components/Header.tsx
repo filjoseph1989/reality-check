@@ -1,25 +1,32 @@
 import Image from 'next/image';
-import juiceBox from '../../public/juicebox.svg';
-import refreshIcon from '../../public/refresh.svg';
+import JuiceBoxIcon from './icons/JuiceBoxIcon';
+import RefreshIcon from './icons/RefreshIcon';
+import BackIcon from './icons/BackIcon'; // dapat e-remove and e-delete ang file
+import arrow from '../../public/arrow.svg';
 
 interface HeaderProps {
   onRefresh: () => void;
+  onBack?: () => void;
 }
 
-const Header = ({ onRefresh }: HeaderProps) => {
+const Header = ({ onRefresh, onBack }: HeaderProps) => {
   return (
-    <header>
-      <nav>
-        <div>
-          <div>
-            <div></div>
+    <header className="header">
+      <nav className="nav">
+        <div className="nav-container">
+          <div className="nav-item nav-item-1">
+            {onBack && (
+              <div className="back-button-container" onClick={onBack}>
+                <Image src={arrow} alt="Back Icon" />
+              </div>
+            )}
           </div>
-          <div>
-            <Image src={juiceBox} alt="Icon" />
+          <div className="nav-item nav-item-2">
+            <JuiceBoxIcon />
           </div>
-          <div className='p-1'>
-            <div className="hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <Image src={refreshIcon} alt="Icon" onClick={onRefresh} />
+          <div className="nav-item nav-item-3">
+            <div>
+              <RefreshIcon onClick={onRefresh} />
             </div>
           </div>
         </div>
