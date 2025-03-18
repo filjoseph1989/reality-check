@@ -17,8 +17,8 @@ const Header = ({ onRefresh }: HeaderProps) => {
           <div>
             <Image src={juiceBox} alt="Icon" />
           </div>
-          <div>
-            <div>
+          <div className='p-1'>
+            <div className="hover:scale-110 transition-transform duration-300 cursor-pointer">
               <Image src={refreshIcon} alt="Icon" onClick={onRefresh} />
             </div>
           </div>
