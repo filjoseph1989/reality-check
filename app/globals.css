@@ -284,17 +284,25 @@ footer {
     border-radius: 20px;
     cursor: pointer;
   }
+
   button.get-reality-check,
   button.continue {
     padding: 20px 4px;
   }
+
   button.get-reality-check {
     background-color: #cdaaff;
     border: none;
   }
+
   button.continue-final {
     color: black;
     background-color: white;
+    transition: background-color 0.3s ease; /* Add transition for hover */
+  }
+
+  button.continue-final:hover {
+    background-color: #dddddd; /* Add hover effect */
   }
 }
 
