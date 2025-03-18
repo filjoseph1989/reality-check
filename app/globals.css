@@ -101,7 +101,6 @@ body {
 nav {
   overflow: hidden;
 
-
   .nav-container {
     display: flex;
     justify-content: space-between;
@@ -111,7 +110,6 @@ nav {
     div.nav-item.nav-item-1 {
       background-color: #0c0d10;
       width: 35px;
-      height: 12px;
     }
 
     &>div:nth-child(1),
