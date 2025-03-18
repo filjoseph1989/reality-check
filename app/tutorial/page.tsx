@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
-import TutorialLottie from '../components/tutorial/TutorialLottie';
 import TutorialSlider from '../components/tutorial/TutorialSlider';
 import TutorialFooter from '../components/tutorial/TutorialFooter';
-import TutorialMobileWrapper from "../components/tutorial/TutorialMobileWrapper";
 import Header from "../components/Header";
+import AnimatedLottie from "../components/AnimatedLottie";
 
 export default function TutorialPage() {
   const router = useRouter();
@@ -40,21 +39,27 @@ export default function TutorialPage() {
 
   return (
     <div className="container">
-      <TutorialMobileWrapper>
-        <Header
-          onRefresh={handleRefresh}
-          onBack={backToHomePage} />
-        <main>
-          <section>
-            <TutorialLottie />
-          </section>
-          <TutorialSlider
-            slides={slides}
-            currentSlide={currentSlide}
-            onSlideChange={goToSlide} />
-        </main>
-        <TutorialFooter isLastSlide={currentSlide === slides.length - 1} onContinue={nextSlide} />
-      </TutorialMobileWrapper>
+      <div className="mobile-wrap">
+        <div className="mobile clearfix">
+          <Header
+            onRefresh={handleRefresh}
+            onBack={backToHomePage} />
+          <main>
+            <section>
+              <div id="animation-container" className="tutorial-animation-container">
+                <AnimatedLottie styles={{ width: '50%', height: '100%' }} />
+              </div>
+            </section>
+            <TutorialSlider
+              slides={slides}
+              currentSlide={currentSlide}
+              onSlideChange={goToSlide} />
+          </main>
+          <TutorialFooter
+            isLastSlide={currentSlide === slides.length - 1}
+            onContinue={nextSlide} />
+        </div>
+      </div>
     </div>
   );
 }

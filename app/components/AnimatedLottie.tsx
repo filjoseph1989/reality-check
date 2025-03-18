@@ -7,9 +7,10 @@ const Lottie = dynamic(() => import('react-lottie-player'), { ssr: false });
 
 interface AnimatedLottieProps {
   className?: string;
+  styles: React.CSSProperties;
 }
 
-const AnimatedLottie = ({ className }: AnimatedLottieProps) => {
+const AnimatedLottie = ({ className, styles }: AnimatedLottieProps) => {
   const [animationData, setAnimationData] = useState<object>();
   const lottieRef = useRef<any>(null);
 
@@ -49,12 +50,11 @@ const AnimatedLottie = ({ className }: AnimatedLottieProps) => {
     <>
       {animationData && (
         <Lottie
-          ref={lottieRef}
           play
           loop
+          ref={lottieRef}
           animationData={animationData}
-          style={{ width: '100%', height: 'auto' }}
-        />
+          style={styles} />
       )}
     </>
   );

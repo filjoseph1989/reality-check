@@ -2,10 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import FormAnimation from '../components/FormAnimation';
 import FormSlides from '../components/FormSlides';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import AnimatedLottie from '../components/AnimatedLottie';
 
 export default function FormPage() {
   const router = useRouter();
@@ -42,7 +42,7 @@ export default function FormPage() {
           <main>
             <section>
               <div id="animation-container">
-                <FormAnimation />
+                <AnimatedLottie styles={{ width: '20%', height: '100%' }} />
               </div>
             </section>
             <section id="form-section">

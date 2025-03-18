@@ -25,7 +25,7 @@ export default function Home() {
           <main>
             <section>
               <div id="animation-container">
-                <AnimatedLottie />
+                <AnimatedLottie styles={{ width: '100%', height: '100%' }} />
                 <OpinionCarousel />
               </div>
             </section>
@@ -39,7 +39,6 @@ export default function Home() {
               </div>
             </section>
           </main>
-          {/* <Footer onGetStarted={getStarted} /> */}
           <Footer
             label="Get a reality check"
             onAction={onGetStarted}
